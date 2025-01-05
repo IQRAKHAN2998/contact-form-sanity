@@ -26,9 +26,9 @@ const ContactForm = () => {
 
     const form = useForm<FormType>({
         resolver : zodResolver(formSchema),
-        defaultValues : {
-            firstName : ""
-        }
+        // defaultValues : {
+        //     firstName : ""
+        // }
     })
     async function onSubmit(values : FormType){
       await  client.create({
@@ -36,7 +36,7 @@ const ContactForm = () => {
             name : values.firstName,
             email: values.email
         })
-         console.log(values) 
+        //  console.log(values) 
     }
   return (
     <div>
